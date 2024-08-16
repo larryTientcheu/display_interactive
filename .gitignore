@@ -5,3 +5,4 @@ __pycache__
 .pytest_*
 .vscode/settings.json
 .env
+*.ipynb
