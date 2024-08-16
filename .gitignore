@@ -1,0 +1,7 @@
+.venv
+datasets/
+output/
+__pycache__
+.pytest_*
+.vscode/settings.json
+.env
