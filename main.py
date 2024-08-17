@@ -34,11 +34,11 @@ def read(data1, data2):
         sys.exit(1)
 
     try:
-    # Load the datasets
+        # Load the datasets
         customer_df = pd.read_csv(datasets_location / data1, delimiter=";")
         purchases_df = pd.read_csv(datasets_location / data2, delimiter=";")
         log.info("Datasets loaded")
-        
+
     except FileNotFoundError as e:
         log.error("File doesn't exist: %s, Please add this file in the data folder", e)
         sys.exit(1)

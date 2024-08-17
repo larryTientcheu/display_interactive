@@ -22,37 +22,66 @@ This project uses `python 3.12`
 ## Getting Started
 
 * From the root of the repository, create a new python environment `.venv` using
+  
+  ```python
+  python -m venv .venv
+  ```
 
-```python
-python -m venv .venv
-```
+* Make sure to select this virtual environment as your working environment.
+  
+  * For Unix Like Shells For Example Git Bash CLI., use
 
-* Make sure to select this environment as your working environment.
-* For Unix Like Shells For Example Git Bash CLI., use
+    ```sh
+    source .venv/bin/activate
+    ```
+  
+  * For Windows With CMD.
 
- ```sh
-source .venv/bin/activate
-```
+    ```cmd
+    .\.venv\Scripts\activate.bat
+    ```
+  
+  * For Windows With Power shell.
 
-* For Windows With CMD.
+    ```powershell
+    .\.venv\Scripts\activate.ps1
+    ```
 
- ```cmd
-.\.venv\Scripts\activate.bat
-```
+* After creating the environment and selecting it, install the necessary packages using the file `requirements.txt`.
+  
+  ```bash
+  pip install -r requirements.txt
+  ```
 
-* For Windows With Power shell.
+## Environment Variables
 
- ```powershell
-.\.venv\Scripts\activate.ps1
-```
+* The default environment is `development`, explicitly set the environment variable `ENV` to `prod` for `production` and `stage` for `staging`.
+  
+  ```python
+  ENV="prod" or ENV="stage"
+  ```
 
-* After creating the environment, install the necessary packages using the file `requirements.txt`.
+* To set the Url, use the environment variables
+  
+  ```python
+  # the url string here is an example
+  DEV_CLOUD_API_URL="dev.url.com" # for development
+  PROD_CLOUD_API_URL="prodserver.api.com" # for production
+  STAGE_CLOUD_API_URL="stageinfra.address.com" # for staging
+  ```
 
- ```bash
-pip install -r requirements.txt
-```
+* To set the environment variables, `VARNAME` here is the actual environment variable name as shown in capital letters above.
+  * UNIX
 
-* Do not forget to add the `.env` file with our `SECRETS`
+    ```bash
+    export VARNAME=value
+    ```
+
+  * Windows
+
+    ```cmd
+    set VARNAME=value
+    ```
 
 ## How to run
 
@@ -63,11 +92,11 @@ pip install -r requirements.txt
 ## Examples
 
 * This runs the script.
-
- ```bash
-
+  
+  ```bash
+  
   python main.py customers.csv purchases.csv
-
+  
   ```
 
 ## Results
